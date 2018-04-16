@@ -30,23 +30,23 @@ def user_input():
 
 
 def ask(student_name, grades, student_grades):
-    current_grades = {student_name: {}}
+    current_grades = {student_name: []}
 
     for key in grades:
         if student_name in student_grades.keys():
             if student_grades[student_name][key] > -1:
                 student_grade = raw_input("Your grade from " + key + " is " + str(student_grades[student_name][key]) + ". Do you want to change your grade for " + key + "?" + " Please write yes or no.")
             if student_grade == 'yes':
-                new_grade = input('So, what is your grade now???')
+                new_grade = input("please input new grade")
                 if new_grade <= 100 and new_grade >= 0:
                     student_grade['totalgrades'][key] = new_grade
                 else:
                     student_grade['totalgrades'][key] = input('Please input a grade between 0 and 100')
 
         else:
-            student_answer1 = int(raw_input("What is your Current Grade for " + key + "? Please insert -1 if you don't have a grade yet."))
-            if (student_answer1 >= 0) and (student_answer1 <= 100) or (student_answer1 == -1):
-                current_grades[student_name][key] = student_answer1
+            theanswer = int(raw_input("please input your grade of " + key + " or type -1 (if no grade)"))
+            if (theanswer >= 0) and (theanswer <= 100) or (theanswer == -1):
+                current_grades[student_name][key] = theanswer
     return current_grades
 
 
