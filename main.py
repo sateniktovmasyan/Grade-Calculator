@@ -35,13 +35,13 @@ def ask(student_name, grades, student_grades):
     for key in grades:
         if student_name in student_grades.keys():
             if student_grades[student_name][key] > -1:
-                student_grade = raw_input("Your grade from " + key + " is " + str(student_grades[student_name][key]) + ". Do you want to change your grade for " + key + "?" + " Please write yes or no.")
-            if student_grade == 'yes':
+                response = raw_input("Your grade from " + key + " is " + str(student_grades[student_name][key]) + ". Change your grade for " + key + "?" + " Please write yes or no.")
+            if response == 'yes':
                 new_grade = input("please input new grade")
                 if new_grade <= 100 and new_grade >= 0:
-                    student_grade['totalgrades'][key] = new_grade
+                    response['totalgrades'][key] = new_grade
                 else:
-                    student_grade['totalgrades'][key] = input('Please input a grade between 0 and 100')
+                    response['totalgrades'][key] = input('Please input a grade between 0 and 100')
 
         else:
             theanswer = int(raw_input("please input your grade of " + key + " or type -1 (if no grade)"))
@@ -89,5 +89,5 @@ def main():
     conversionmatrix = load_conversion_matrix()
     print_message(grade,conversionmatrix)
 
-main()
 
+main()
