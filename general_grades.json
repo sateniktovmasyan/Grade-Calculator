@@ -1,1 +1,14 @@
-( )
+{
+	"Satenik": {
+		"InClassLabsQuizzes": 80,
+		"AssignmentsProgrammingProject": 80,
+		"FinalProject": 90,
+		"MidtermExamination": 100
+	},
+	"Mariana": {
+		"InClassLabsQuizzes": 100,
+		"AssignmentsProgrammingProject": 99,
+		"FinalProject": 100,
+		"MidtermExamination": 90
+	}
+}
